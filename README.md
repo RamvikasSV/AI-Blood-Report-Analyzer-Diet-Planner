@@ -1,6 +1,13 @@
 # Health Analysis Streamlit App
 
-This folder contains a health analysis project built with Streamlit and LangChain.
+This project contains a Streamlit application that accepts a patient's blood report (plain text) and returns a health summary and a practical diet plan.
+
+Project workflow (two stages):
+
+- **Extract and Flag Abnormal Values**: parses the blood report and extracts every test value, labeling each as `HIGH`, `LOW`, or `NORMAL` based on the reference ranges present in the report.
+- **Health Summary and Indian Diet Plan**: produces a concise 4–5 line health summary and a practical Indian diet plan with two sections: `Foods to avoid` and `Foods to eat more of`.
+
+The app supports a quick one-click analysis mode and a step-by-step mode where you can view extracted values before generating the diet plan.
 
 ## Files
 - `blood_work_analysis.ipynb`: notebook version of the blood report analysis workflow

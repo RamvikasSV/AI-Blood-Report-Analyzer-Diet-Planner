@@ -15,7 +15,21 @@ st.set_page_config(
 )
 
 st.title("🩺 Blood Work Analysis Pipeline")
-st.markdown("A two-stage LLM pipeline for comprehensive health analysis")
+st.markdown(
+    """
+A Streamlit app that accepts a patient's blood report (plain text) and returns:
+
+- A parsed list of test results labeled `HIGH` / `LOW` / `NORMAL`.
+- A short 4–5 line health summary in simple language.
+- A practical Indian diet plan with two sections: `Foods to avoid` and `Foods to eat more of`.
+
+The pipeline works in two stages:
+1. **Extract and Flag Abnormal Values** — parse the blood report and flag abnormal results.
+2. **Health Summary and Indian Diet Plan** — generate an easy-to-read summary and a focused diet plan.
+
+You can run a quick one-click analysis or use the step-by-step mode to view extraction details first.
+"""
+)
 
 # User notice about API limits
 st.info("If you encounter API limit or key errors (e.g. rate limit or quota exceeded), please wait a few minutes and try again.")
