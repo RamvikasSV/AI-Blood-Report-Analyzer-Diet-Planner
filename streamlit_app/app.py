@@ -17,6 +17,9 @@ st.set_page_config(
 st.title("🩺 Blood Work Analysis Pipeline")
 st.markdown("A two-stage LLM pipeline for comprehensive health analysis")
 
+# User notice about API limits
+st.info("If you encounter API limit or key errors (e.g. rate limit or quota exceeded), please wait a few minutes and try again.")
+
 # Initialize LLM
 @st.cache_resource
 def load_llm():

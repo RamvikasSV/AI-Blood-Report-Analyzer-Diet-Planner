@@ -25,3 +25,5 @@ This folder contains a health analysis project built with Streamlit and LangChai
 1. Push this folder to a GitHub repository.
 2. Set the main file path to `streamlit_app/app.py`.
 3. Add required secrets in Streamlit Cloud settings.
+
+Live demo: https://blood-work-analysis-project.streamlit.app/
