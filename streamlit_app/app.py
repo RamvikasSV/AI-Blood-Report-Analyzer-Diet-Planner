@@ -2,6 +2,7 @@ import streamlit as st
 from dotenv import load_dotenv
 from langchain_google_genai import ChatGoogleGenerativeAI
 import os
+from pathlib import Path
 
 # Load environment variables
 load_dotenv()
@@ -23,16 +24,24 @@ def load_llm():
 
 llm = load_llm()
 
-# Load blood work data
+# Load blood work data (robust lookup for deployed environments)
 @st.cache_data
 def load_blood_report():
-    # Try to load from the parent directory
-    try:
-        with open("../blood_work.txt", "r") as f:
-            return f.read()
-    except:
-        # Fallback: return empty string or sample data
-        return None
+    # Try several candidate locations relative to this file and the current working dir
+    candidates = [
+        Path(__file__).resolve().parent.parent / "blood_work.txt",  # repo root when running from streamlit_app
+        Path(__file__).resolve().parent / ".." / "blood_work.txt",
+        Path.cwd() / "blood_work.txt",
+    ]
+    for p in candidates:
+        try:
+            p = p.resolve()
+            if p.exists():
+                with open(p, "r", encoding="utf-8") as f:
+                    return f.read()
+        except Exception:
+            continue
+    return None
 
 demo_blood_report = load_blood_report()
 
