@@ -1,6 +1,6 @@
-# Health Analysis Streamlit App
+# AI Blood Report Analyzer & Diet Planner
 
-This project contains a Streamlit application that accepts a patient's blood report (plain text) and returns a health summary and a practical diet plan.
+This project contains a Streamlit application (AI Blood Report Analyzer & Diet Planner) that accepts a patient's blood report (plain text) and returns a health summary and a practical diet plan.
 
 Project workflow (two stages):
 

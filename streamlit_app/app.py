@@ -9,12 +9,11 @@ load_dotenv()
 
 # Set up page config
 st.set_page_config(
-    page_title="Blood Work Analysis Pipeline",
+    page_title="AI Blood Report Analyzer & Diet Planner",
     page_icon="🩺",
     layout="wide"
 )
-
-st.title("🩺 Blood Work Analysis Pipeline")
+st.title("🩺 AI Blood Report Analyzer & Diet Planner")
 st.markdown(
     """
 A Streamlit app that accepts a patient's blood report (plain text) and returns:
